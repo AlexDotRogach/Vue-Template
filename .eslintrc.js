@@ -9,9 +9,9 @@ module.exports = {
     "eslint:recommended",
     "@vue/prettier",
     "@vue/typescript/recommended",
-    "plugin:vue/vue3-essential",
-    "plugin:storybook/recommended",
     "plugin:markdown/recommended",
+    "plugin:vue/vue3-essential",
+    "./.eslintrc-auto-import.json",
   ],
   parserOptions: {
     ecmaVersion: 2020,

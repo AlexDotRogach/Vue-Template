@@ -21,6 +21,5 @@
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
-  "include": ["vite.config.*", "src/**/*", "src/**/*.vue"],
-  "exclude": ["node_modules", "**/*.stories.ts"]
+  "include": ["vite.config.*", "src/**/*", "src/**/*.vue", "auto-imports.d.ts"],
 }

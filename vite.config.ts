@@ -4,8 +4,16 @@ import { resolve } from "path";
 import { fileURLToPath, URL } from "url";
 import { defineConfig } from "vite";
 import eslintPlugin from "vite-plugin-eslint";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import vuetify from "vite-plugin-vuetify";
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
   plugins: [
     vue(),
     vueI18n({
@@ -13,11 +21,26 @@ export default defineConfig({
       runtimeOnly: false,
     }),
     eslintPlugin(),
+    AutoImport({
+      imports: ["vue", "vue-router", "vue-i18n", "@vueuse/core"],
+      dts: true,
+      dirs: [
+        "src/composables",
+        "src/composables/**/",
+        "src/stores",
+        "src/stores/**/",
+        "src/assets/img/svg/*",
+      ],
+      eslintrc: {
+        enabled: true,
+      },
+    }),
+    Components({
+      dts: "src/components.d.ts",
+    }),
+    vuetify({
+      autoImport: true,
+    }),
   ],
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
-  },
-  server: { port: 8080 },
+  server: { port: 5050 },
 });
