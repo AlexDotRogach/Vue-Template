@@ -1,13 +1,20 @@
-template vue<br>
-<br>
-all packages need to add using yarn<br>
-node - 14.18<br>
+
+# Vue template
+
+simple template for developing on Vue
+
+all packages need to add using yarn
+
+node - 14.18
+
 ------------------------------
-before push you need to write:<br>
-    yarn lint:fix<br>
+before push you need to write:
+
+    yarn lint:fix
     yarn typecheck
+
 ------------------------------
-no import <br>
-    - all components will import automatically <br>
-    - all elements in vite.config.ts that in AutoImport (imports) will be accessibility<br>
-    without import
+no import:
+
+    - all components will import automatically 
+    - all elements in vite.config.ts that in AutoImport (imports) will be accessibility without import
