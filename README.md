@@ -3,6 +3,8 @@
 
 simple template for developing on Vue
 
+Vue 3 / i18n / Typescript / Vite / Pinia / ESLint / Prettier.
+
 all packages need to add using yarn
 
 node - 14.18
